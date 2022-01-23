@@ -380,6 +380,9 @@ div.goto-top i {
 }
 
 @media screen and (max-width: 900px) {
+  header {
+    margin-bottom: 30px;
+  }
   header .content ul {
     display: none;
   }
@@ -391,11 +394,14 @@ div.goto-top i {
   }
 
   main .left {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   main .right {
-    width: 100%;
+    display: flex;
+    justify-content: center;
     margin-bottom: 30px;
   }
 
