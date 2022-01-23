@@ -30,6 +30,7 @@ a {
 body {
   background-color: var(--dark);
   color: var(--white);
+  font-size: 16px;
   font-family: 'DM Sans', sans-serif;
   display: flex;
   align-items: center;
@@ -37,7 +38,7 @@ body {
   position: relative;
 }
 
-.container {
+div.container {
   width: 80%;
 }
 
@@ -53,7 +54,7 @@ header {
   background-color: rgba(var(--gray-400-rgb), var(--alpha));
 }
 
-header div.content {
+header .content {
   width: 80%;
   height: 100%;
   display: flex;
@@ -61,19 +62,19 @@ header div.content {
   align-items: center;
 }
 
-header div.content .logo {
+header .content .logo {
   font-size: 26px;
   font-weight: 700;
 }
 
-header div.content ul {
+header .content ul {
   display: flex;
   justify-content: space-between;
   gap: 45px;
   font-size: 18px;
 }
 
-header div.content ul li {
+header .content ul li {
   cursor: pointer;
 }
 
@@ -83,12 +84,12 @@ main {
   margin-bottom: 69px;
 }
 
-main.left {
+main .left {
   width: 337px;
 }
 
 main .left h1 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
 }
 
@@ -126,29 +127,29 @@ main .btn .contact {
   padding: 12px 16px;
 }
 
-main.right img {
-  width: 300px;
+main .right img {
+  max-width: 350px;
 }
 
 section.about-me {
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-bottom: 85px;
 }
 
 section.about-me h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--white);
   margin-bottom: 30px;
 }
 
 section.about-me p {
-  width: 745px;
-  font-size: 18px;
+  max-width: 745px;
+  font-size: 1.125rem;
   font-weight: 400;
   color: var(--gray);
-  margin-bottom: 85px;
   line-height: 32px;
   text-align: center;
 }
@@ -156,17 +157,20 @@ section.about-me p {
 section.contacts {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 121px;
   margin-bottom: 67px;
 }
 
-section.contacts div {
+section.contacts div.contact {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 170px;
+  height: 150px;
 }
 
-section.contacts div div.icon {
+section.contacts div.contact div.icon {
   width: 62px;
   height: 62px;
   display: flex;
@@ -176,7 +180,7 @@ section.contacts div div.icon {
   border-radius: 31px;
 }
 
-section.contacts div div.icon i {
+section.contacts div.contact div.icon i {
   font-size: 32px;
   color: var(--yellow);
 }
@@ -328,7 +332,7 @@ section.skills div.cards-skills div.card-skill {
 }
 
 section.skills div.cards-skills div.card-skill i {
-  font-size: 80px;
+  font-size: 5rem;
   color: var(--yellow);
 }
 
@@ -373,4 +377,79 @@ div.goto-top i {
   content: '';
   display: block;
   height: 60px; /* fixed header height*/
+}
+
+@media screen and (max-width: 900px) {
+  header .content ul {
+    display: none;
+  }
+
+  main {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  main .left {
+    width: 100%;
+  }
+
+  main .right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  main .right img {
+    max-width: 50%;
+  }
+
+  main .left h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  main .left h2 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  section.about-me {
+    margin-bottom: 30px;
+  }
+
+  section.contacts {
+    gap: 0px;
+    margin-bottom: 30px;
+  }
+
+  section.projects {
+    margin-bottom: 30px;
+  }
+
+  section.services {
+    margin-bottom: 30px;
+  }
+
+  section.skills {
+    margin-bottom: 30px;
+  }
+
+  .target::before {
+    content: '';
+    display: block;
+    height: 0px; /* fixed header height*/
+  }
+
+  section.skills div.cards-skills {
+    gap: 25px;
+  }
+
+  section.skills div.cards-skills div.card-skill {
+    width: 85px;
+    height: 75px;
+  }
+
+  section.skills div.cards-skills div.card-skill i {
+    font-size: 3rem;
+  }
 }
